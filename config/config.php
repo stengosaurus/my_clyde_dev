@@ -1,9 +1,9 @@
 <?php
 
 $hn = "localhost";
-$un = "my_clyde_admin";
-$pw = "Q*PLvEH!CKgI_eUt";
-$db = "my_clydev1";
+$un = "student_admin";
+$pw = "jeSx@!W1euHa4Kvg";
+$db = "myclyde";
 
 $conn = new mysqli($hn, $un, $pw, $db);
 
