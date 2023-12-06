@@ -18,32 +18,9 @@ RewriteEngine On
 
 # General rewrite
 RewriteRule ^login$ pages/Login.php [L]
-RewriteRule ^register$ pages/Register.php [L]
-RewriteRule ^logout$ config/logout.php [L]
-RewriteRule ^authenticate$ config/authenticate.php [L]
-RewriteRule ^welcome$ index.php [L]
-# RewriteRule ^blogs$ pages/blog/index.php [L]
-# RewriteRule ^blogDetails/([0-9]+)$ pages/blog/details.php?blog_id=$1 [L]
-
 
 # User Navigation
 RewriteRule ^s/dashboard$ pages/student/Dashboard.php [L]
-RewriteRule ^a/dashboard$ pages/admin/Dashboard.php [L]
-# RewriteRule ^u/comments$ account/dashboard/user/userComments.php [L]
-# RewriteRule ^u/account$ account/dashboard/user/account.php [L]
 
-
-
-#Admin Navigation
-# RewriteRule ^a/dashboard$ account/dashboard/admin/index.php [L]
-# RewriteRule ^a/allUsers$ account/dashboard/admin/pages/user.php [L]
-# RewriteRule ^a/addBlog$ account/dashboard/admin/pages/addBlog.php [L]
-# RewriteRule ^a/pendingComments$ account/dashboard/admin/pages/pendingComments.php [L]
-# RewriteRule ^a/commentDetails/([0-9]+)$ account/dashboard/admin/pages/commentDetails.php?cid=$1 [L]
-# RewriteRule ^a/deleteUser/([0-9]+)$ account/dashboard/admin/components/deletePopup.php?uid=$1 [L]
-# RewriteRule ^a/deleteUserConfirm/([0-9]+)$ account/dashboard/admin/config/deleteUser.php?uid=$1 [L]
-# RewriteRule ^a/deactivateUser/([0-9]+)$ account/dashboard/admin/config/deactivateUser.php?uid=$1 [L]
-# RewriteRule ^a/activateUser/([0-9]+)$ account/dashboard/admin/config/activateUser.php?uid=$1 [L]
-# RewriteRule ^a/editUser/([0-9]+)$ account/dashboard/admin/pages/editUser.php?uid=$1 [L]
 
 
