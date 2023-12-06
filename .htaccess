@@ -17,10 +17,14 @@ RewriteEngine On
 #  potentially match a URL, but you only want one of them to be applied.
 
 # General rewrite
+RewriteRule ^welcome$ index.php [L]
 RewriteRule ^login$ pages/Login.php [L]
+RewriteRule ^adminlogin$ pages/AdminLogin.php [L]
+RewriteRule ^register$ pages/Register.php [L]
 
 # User Navigation
 RewriteRule ^s/dashboard$ pages/student/Dashboard.php [L]
+RewriteRule ^a/dashboard$ pages/admin/Dashboard.php [L]
 
 
 

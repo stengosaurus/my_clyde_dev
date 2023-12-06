@@ -144,9 +144,9 @@
 
             <!-- Links -->
             <a
-                href="#"
+                href="<?= BASE_PATH ?>adminlogin"
                 class="my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
-                GitHub
+                Admin Login
             </a>
             <a
                 href="#"

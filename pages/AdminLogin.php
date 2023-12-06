@@ -21,13 +21,13 @@ session_start();
         </div>
       <?php endif; ?>
 
-      <form action="config/authenticate.php" method="post">
+      <form action="config/authenticate_admin.php" method="post">
         <div class="mb-4 text-lg">
-          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="student_num" placeholder="20145874" />
+          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="text" name="username" placeholder="20145874" />
         </div>
 
         <div class="mb-4 text-lg">
-          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="password" name="psw" placeholder="*********" />
+          <input class="rounded-3xl border-none bg-yellow-400 bg-opacity-50 px-6 py-2 text-center text-inherit placeholder-slate-200 shadow-lg outline-none backdrop-blur-md" type="password" name="password" placeholder="*********" />
         </div>
 
         <div class="mt-8 flex justify-center text-lg text-black">
