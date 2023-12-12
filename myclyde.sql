@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `admin`
 --
 
-CREATE TABLE `admin` (
+CREATE TABLE `Admin` (
   `admin_id` int(11) NOT NULL,
   `username` varchar(16) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL
@@ -46,7 +46,7 @@ INSERT INTO `admin` (`admin_id`, `username`, `password`) VALUES
 -- Table structure for table `course`
 --
 
-CREATE TABLE `course` (
+CREATE TABLE `Course` (
   `course_id` int(11) NOT NULL,
   `name` varchar(32) DEFAULT NULL,
   `award` varchar(16) DEFAULT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `course` (
 -- Table structure for table `event`
 --
 
-CREATE TABLE `event` (
+CREATE TABLE `Event` (
   `events_id` int(11) NOT NULL,
   `added_by` int(11) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE `event` (
 -- Table structure for table `news`
 --
 
-CREATE TABLE `news` (
+CREATE TABLE `News` (
   `news_id` int(11) NOT NULL,
   `title` varchar(32) DEFAULT NULL,
   `description` text DEFAULT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE `news` (
 -- Table structure for table `student`
 --
 
-CREATE TABLE `student` (
+CREATE TABLE `Student` (
   `student_num` int(11) NOT NULL,
   `firstname` varchar(32) DEFAULT NULL,
   `surname` varchar(64) DEFAULT NULL,
@@ -114,7 +114,7 @@ INSERT INTO `student` (`student_num`, `firstname`, `surname`, `email`, `address`
 -- Table structure for table `student_comment`
 --
 
-CREATE TABLE `student_comment` (
+CREATE TABLE `Student_Comment` (
   `nc_id` int(11) NOT NULL,
   `fk_news_id` int(11) DEFAULT NULL,
   `student_email` int(11) DEFAULT NULL
@@ -126,7 +126,7 @@ CREATE TABLE `student_comment` (
 -- Table structure for table `student_enrolment`
 --
 
-CREATE TABLE `student_enrolment` (
+CREATE TABLE `Student_Enrolment` (
   `enrol_id` int(11) NOT NULL,
   `date` date DEFAULT NULL,
   `fk_unit` int(11) DEFAULT NULL,
@@ -139,7 +139,7 @@ CREATE TABLE `student_enrolment` (
 -- Table structure for table `unit`
 --
 
-CREATE TABLE `unit` (
+CREATE TABLE `Unit` (
   `unit_id` int(11) NOT NULL,
   `name` varchar(11) DEFAULT NULL,
   `description` varchar(255) DEFAULT NULL
@@ -152,45 +152,45 @@ CREATE TABLE `unit` (
 --
 -- Indexes for table `admin`
 --
-ALTER TABLE `admin`
+ALTER TABLE `Admin`
   ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `course`
 --
-ALTER TABLE `course`
+ALTER TABLE `Course`
   ADD PRIMARY KEY (`course_id`);
 
 --
 -- Indexes for table `event`
 --
-ALTER TABLE `event`
+ALTER TABLE `Event`
   ADD PRIMARY KEY (`events_id`);
 
 --
 -- Indexes for table `news`
 --
-ALTER TABLE `news`
+ALTER TABLE `News`
   ADD PRIMARY KEY (`news_id`);
 
 --
 -- Indexes for table `student`
 --
-ALTER TABLE `student`
+ALTER TABLE `Student`
   ADD PRIMARY KEY (`student_num`),
   ADD KEY `fk_course` (`fk_course`);
 
 --
 -- Indexes for table `student_comment`
 --
-ALTER TABLE `student_comment`
+ALTER TABLE `Student_Comment`
   ADD PRIMARY KEY (`nc_id`),
   ADD KEY `fk_news_id` (`fk_news_id`);
 
 --
 -- Indexes for table `student_enrolment`
 --
-ALTER TABLE `student_enrolment`
+ALTER TABLE `Student_Enrolment`
   ADD PRIMARY KEY (`enrol_id`),
   ADD KEY `fk_unit` (`fk_unit`),
   ADD KEY `fk_student` (`fk_student`);
@@ -198,7 +198,7 @@ ALTER TABLE `student_enrolment`
 --
 -- Indexes for table `unit`
 --
-ALTER TABLE `unit`
+ALTER TABLE `Unit`
   ADD PRIMARY KEY (`unit_id`);
 
 --
@@ -208,43 +208,43 @@ ALTER TABLE `unit`
 --
 -- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `admin`
+ALTER TABLE `Admin`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
-ALTER TABLE `course`
+ALTER TABLE `Course`
   MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `event`
 --
-ALTER TABLE `event`
+ALTER TABLE `Event`
   MODIFY `events_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `news`
 --
-ALTER TABLE `news`
+ALTER TABLE `News`
   MODIFY `news_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_comment`
 --
-ALTER TABLE `student_comment`
+ALTER TABLE `Student_Comment`
   MODIFY `nc_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `student_enrolment`
 --
-ALTER TABLE `student_enrolment`
+ALTER TABLE `Student_Enrolment`
   MODIFY `enrol_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `unit`
 --
-ALTER TABLE `unit`
+ALTER TABLE `Unit`
   MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -254,19 +254,19 @@ ALTER TABLE `unit`
 --
 -- Constraints for table `student`
 --
-ALTER TABLE `student`
+ALTER TABLE `Student`
   ADD CONSTRAINT `student_ibfk_1` FOREIGN KEY (`fk_course`) REFERENCES `course` (`course_id`);
 
 --
 -- Constraints for table `student_comment`
 --
-ALTER TABLE `student_comment`
+ALTER TABLE `Student_Comment`
   ADD CONSTRAINT `student_comment_ibfk_1` FOREIGN KEY (`fk_news_id`) REFERENCES `news` (`news_id`);
 
 --
 -- Constraints for table `student_enrolment`
 --
-ALTER TABLE `student_enrolment`
+ALTER TABLE `Student_Enrolment`
   ADD CONSTRAINT `student_enrolment_ibfk_1` FOREIGN KEY (`fk_unit`) REFERENCES `unit` (`unit_id`),
   ADD CONSTRAINT `student_enrolment_ibfk_2` FOREIGN KEY (`fk_student`) REFERENCES `student` (`student_num`);
 COMMIT;

@@ -25,7 +25,9 @@ RewriteRule ^register$ pages/Register.php [L]
 
 # User Navigation
 RewriteRule ^s/dashboard$ pages/student/Dashboard.php [L]
+RewriteRule ^s/coursedetails$ pages/student/CourseDetails.php [L]
+RewriteRule ^s/details$ pages/student/MyDetails.php [L]
+RewriteRule ^s/news$ pages/student/News.php [L]
+RewriteRule ^s/events$ pages/student/Events.php [L]
+
 RewriteRule ^a/dashboard$ pages/admin/Dashboard.php [L]
-
-
-
