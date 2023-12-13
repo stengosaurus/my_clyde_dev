@@ -1,5 +1,8 @@
-<?php include '../../partials/header.php'; ?>
-student dash
+<?php 
+    include '../../partials/header.php';
+    include '../../config/config.php'; 
+    include '../../queries/student.php'; 
+    ?>
 
 <style>
     :root {
@@ -47,7 +50,7 @@ student dash
                 <div @click.away="open = false" class="relative" x-data="{ open: false }">
                     <button @click="open = !open"
                         class="flex flex-row items-center space-x-2 w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent hover:bg-blue-800 md:w-auto md:inline md:mt-0 md:ml-4 hover:bg-gray-200 focus:bg-blue-800 focus:outline-none focus:shadow-outline">
-                        <span>Jane Doe</span>
+                        <span><?=$firstname . ' ' . $surname?></span>
                         <img class="inline h-6 rounded-full"
                             src="https://avatars2.githubusercontent.com/u/24622175?s=60&amp;v=4">
                         <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
@@ -91,7 +94,7 @@ student dash
                             src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                             alt="">
                     </div>
-                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
+                    <h1 class="text-gray-900 font-bold text-xl leading-8 my-1"><?= $firstname . ' ' . $surname ?></h1>
                     <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
                     <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                         consectetur adipisicing elit.
@@ -171,37 +174,37 @@ student dash
                         <div class="grid md:grid-cols-2 text-sm">
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">First Name</div>
-                                <div class="px-4 py-2">Jane</div>
+                                <div class="px-4 py-2"><?= $firstname ?></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Last Name</div>
-                                <div class="px-4 py-2">Doe</div>
+                                <div class="px-4 py-2"><?= $surname ?></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Gender</div>
                                 <div class="px-4 py-2">Female</div>
                             </div>
                             <div class="grid grid-cols-2">
-                                <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                <div class="px-4 py-2">+11 998001001</div>
+                                <div class="px-4 py-2 font-semibold">Student ID</div>
+                                <div class="px-4 py-2"><?= $studentNum ?></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Current Address</div>
-                                <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
+                                <div class="px-4 py-2"><?= $address ?></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Permanant Address</div>
-                                <div class="px-4 py-2">Arlington Heights, IL, Illinois</div>
+                                <div class="px-4 py-2"><?= $address ?></div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Email.</div>
                                 <div class="px-4 py-2">
-                                    <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
+                                    <a class="text-blue-800" href="mailto:jane@example.com"><?= $email ?></a>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2">
                                 <div class="px-4 py-2 font-semibold">Birthday</div>
-                                <div class="px-4 py-2">Feb 06, 1998</div>
+                                <div class="px-4 py-2"><?= $dob ?></div>
                             </div>
                         </div>
                     </div>

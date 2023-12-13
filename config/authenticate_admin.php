@@ -7,7 +7,7 @@ session_start();
 $errorMessage = '';
 
 // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-if ($stmt = $conn->prepare('SELECT username, password FROM admin WHERE username = ?')) {
+if ($stmt = $conn->prepare('SELECT username, password FROM Admin WHERE username = ?')) {
     // Bind parameters (s = string, i = int, b = blob, etc), in our case the student_num is a string so we use "s"
     $stmt->bind_param('s', $_POST['username']);
     $stmt->execute();
