@@ -1,14 +1,13 @@
 <?php 
     include '../../partials/header.php';
     include '../../config/config.php';
-    include '../../queries/eventQuery.php'; 
+    include '../../queries/eventQuery.php';
 
     $datetime = new DateTime($date);
 
-    $formattedDateTime = $datetime->format('F j, Y \a\t H:i:s');
-
-?>
-
+// Format the datetime in a nice-looking way
+$formattedDateTime = $datetime->format('F j, Y \a\t H:i:s');
+ ?>
 <!-- component -->
 <link rel="stylesheet" href="https://cdn.tailgrids.com/tailgrids-fallback.css" />
 

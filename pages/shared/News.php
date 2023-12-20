@@ -20,9 +20,16 @@
                     <button class="group my-6 relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
                         <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
                         <span class="relative text-black group-hover:text-white">Read More</span>
-                    </button>                
+                    </button>   
+                    <?php if(isset($_SESSION['student_num'])) : ?>           
+                        <button onclick="window.location.href='s/comment?news_id=<?=$newsId?>';" class="group my-6 relative h-12 w-48 overflow-hidden rounded-lg bg-white text-lg shadow">
+                            <div class="absolute inset-0 w-3 bg-amber-400 transition-all duration-[250ms] ease-out group-hover:w-full"></div>
+                            <span class="relative text-black group-hover:text-white">Leave a comment</span>
+                        </button>   
+                    <?php endif ?>             
                 </div>
                 <?php endwhile ?>
             </div>
         </div>
     </main>
+<?php include '../../partials/footer.php'; ?>

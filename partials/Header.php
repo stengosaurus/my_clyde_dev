@@ -84,8 +84,8 @@
                   <a href="<?= BASE_PATH ?>s/dashboard">Student Dashboard</a>
                   <a href="<?= BASE_PATH ?>s/coursedetails">Student Course Details</a>
                   <a href="<?= BASE_PATH ?>s/details">My Details</a>
-                  <a href="<?= BASE_PATH ?>s/news">News</a>
-                  <a href="<?= BASE_PATH ?>s/events">Events</a>
+                  <a href="<?= BASE_PATH ?>news">News</a>
+                  <a href="<?= BASE_PATH ?>events">Events</a>
                   <a href="<?= BASE_PATH ?>logout" class="flex text-gray-600 hover:text-blue-500 cursor-pointer transition-colors duration-300" href="">Logout</a>
                   <?php elseif(isset($_SESSION['admin'])) : ?>
                     <a href="<?= BASE_PATH ?>a/dashboard">Admin Login</a>

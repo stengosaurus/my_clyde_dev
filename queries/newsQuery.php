@@ -1,6 +1,7 @@
 
 <?php
     $news = $conn->prepare('SELECT
+    news_id,
     title,
     description
     
@@ -8,5 +9,5 @@
     ');
     $news->execute();
     $news->store_result();
-    $news->bind_result($titles, $description);
+    $news->bind_result($newsId, $titles, $description);
 ?>
